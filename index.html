@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
+    <style>
+        body {
+            background: #010120;
+        }
+        h2 {
+            color: white;
+            margin: 30px 20px 20px;
+        }
+        #wrap {
+            margin: 20px;
+        }
+        ul {
+            display: none;
+            list-style: none;
+        }
+        p a {
+            font-size: 18px;
+            color: white;
+        }
+        p a:hover {
+            color: #ccc
+        }
+        li a {
+            color: white;
+            text-decoration: none;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>1222 과제</title>
+</head>
+<body>
+    <h2>Travel Information 🌎</h2>
+    <div id="wrap">
+        <p class="btn">
+            <a href="#">🇬🇧 England</a>
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Manchester</a></li>
+                <li><a href="#">Oxford</a></li>
+            </ul>
+        </p>
+        <p class="btn">
+            <a href="#">🇫🇷 France</a>
+            <ul>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Nice</a></li>
+                <li><a href="#">Lyon</a></li>
+            </ul>
+        </p>
+        <p class="btn">
+            <a href="#">🇩🇪 Germany</a>
+            <ul>
+                <li><a href="#">Berlin</a></li>
+                <li><a href="#">Munich</a></li>
+                <li><a href="#">Frankfurt</a></li>
+            </ul>
+        </p>
+    </div>
+
+    <script>
+        $(function(){
+            $('.btn a').on('mouseover', function(){
+                $('.btn').next('ul').filter(':visible').slideUp();
+                $(this).parent().next().slideDown();
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
